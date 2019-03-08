@@ -24,7 +24,7 @@ public class DoubleCheckSingleton implements Serializable {
         return singleton;
     }
 
-    private Object readSolve(){
+    private Object readResolve(){
         return singleton;
     }
 
