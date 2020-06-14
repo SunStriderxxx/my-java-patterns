@@ -12,6 +12,10 @@ public class StaticInnerClassSingleton {
     }
 
     private StaticInnerClassSingleton() {
+        //防止反射创建对象，破坏单例
+        if (Singleton.SINGLETON != null) {
+            throw new RuntimeException("不允许创建多个实例！");
+        }
     }
 
     public static StaticInnerClassSingleton getInstance() {
